@@ -1,14 +1,18 @@
-name: Access server
-on: push
+name: Deploy to production
+
+on: ["push", "pull_request"]
+
 jobs:
-  access_server:
-    name: Access server
+  deploy:
+    name: SCP files to server
     runs-on: ubuntu-latest
     steps:
-      - name: Create a file
-        uses: appleboy/ssh-action@master
+      - name: SCP files via ssh key
+        uses: appleboy/scp-action@master
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          HOST: ${{ secrets.HOST }}
+          KEY: ${{ secrets.KEY }}
         with:
-          host: 34.105.137.35
-          username: golnar
-          key: ${{ secrets.SSH_PRIVATEKEY }}
-          script: echo hello world > hello.txt
+          source: './*'
+          target: '/home/golnar'
