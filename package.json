@@ -1,0 +1,11 @@
+{
+  "name": "databases",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">\r   <a>\r     <p align=\"center\"><img alt=\"list\" src=\"assets/1.png\" /></p>\r   </a>\r   <h1><a>Queries</a> - SQL</h1>\r </div>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
