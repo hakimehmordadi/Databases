@@ -7,13 +7,13 @@ on:
       - completed
 
 jobs:
-  deploy:
+  on-success:
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Deploy to Production
-        run: |
-          echo "work flow secon"
+    - run: echo 'The triggering workflow passed'
+#   on-failure:
+#     runs-on: ubuntu-latest
+#     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+#     steps:
+#     - run: echo 'The triggering workflow failed'
