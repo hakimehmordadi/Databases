@@ -1,7 +1,9 @@
 name: Build
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -13,5 +15,4 @@ jobs:
 
       - name: Build and Test
         run: |
-          ./test.sh
-          echo "second -->"
+          echo "first work flow"
