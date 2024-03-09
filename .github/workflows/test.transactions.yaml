@@ -16,4 +16,4 @@ jobs:
 
       - name: Deploy to Production
         run: |
-          echo "work flow secon"
+          ./test.sh
