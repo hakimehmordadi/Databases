@@ -14,3 +14,4 @@ jobs:
       - name: Build and Test
         run: |
           ./test.sh
+          echo "second -->"
