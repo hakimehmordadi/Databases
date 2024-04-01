@@ -5,6 +5,10 @@ on: ["push"]
 jobs:
   analyze:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
     steps:
 
@@ -14,7 +18,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: javascript
+          languages: javascript-typescript
           
 
       - name: Autobuild
@@ -23,4 +27,4 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
-          category: "/language:javascript"
+          category: "/language:javascript-typescript"
