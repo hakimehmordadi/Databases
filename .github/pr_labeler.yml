@@ -18,34 +18,6 @@
   - collections/**/*
 "C:log":
   - log/*
-"C:orm":
-  - orm/**/*
-"C:x/accounts":
-  - x/accounts/**/*
-"C:x/auth":
-  - x/auth/**/*
-"C:x/authz":
-  - x/authz/**/*
-"C:x/bank":
-  - x/bank/**/*
-"C:x/circuit":
-  - x/circuit/**/*
-"C:x/consensus":
-  - x/consensus/**/*
-"C:x/crisis":
-  - x/crisis/**/*
-"C:x/distribution":
-  - x/distribution/**/*
-"C:x/evidence":
-  - x/evidence/**/*
-"C:x/feegrant":
-  - x/feegrant/**/*
-"C:x/genutil":
-  - x/genutil/**/*
-"C:x/gov":
-  - x/gov/**/*
-"C:x/group":
-  - x/group/**/*
 "C:x/mint":
   - x/mint/**/*
 "C:x/nft":
@@ -54,12 +26,8 @@
   - x/params/**/*
 "C:x/protocolpool":
   - x/protocolpool/**/*
-"C:x/slashing":
-  - x/slashing/**/*
 "C:x/staking":
   - x/staking/**/*
-"C:x/tx":
-  - x/tx/**/*
 "C:x/upgrade":
   - x/upgrade/**/*
 "C:x/epochs":
