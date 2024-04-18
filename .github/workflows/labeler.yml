@@ -3,13 +3,12 @@ on:
   - pull_request
 
 jobs:
-  pr-labeler:
-    permissions:
-      contents: read
-      pull-requests: write
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/labeler@v4.1.0
-      with:
-        configuration-path: .github/labeler.yml
-        repo-token: "${{ secrets.MY_TOKEN }}"
+    pr-labeler:
+      permissions:
+        contents: read
+        pull-requests: write
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/labeler@v4.1.0
+        with:
+          sync-labels: true
