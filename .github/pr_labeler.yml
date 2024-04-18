@@ -1,46 +1,12 @@
-"C:CLI":
-  - client/**/*
-  - x/*/client/**/*
-"C:Confix":
-  - tools/confix/**/*
-"C:Cosmovisor":
-  - tools/cosmovisor/**/*
-"C:Hubl":
-  - tools/hubl/**/*
-"C:Keys":
-  - client/keys/**/*
-"C:Simulations":
-  - x/simulation/**/*
-  - x/*/simulation/**/*
-"C:Store":
-  - store/**/*
-"C:collections":
-  - collections/**/*
-"C:log":
-  - log/*
-"C:x/mint":
-  - x/mint/**/*
-"C:x/nft":
-  - x/nft/**/*
-"C:x/params":
-  - x/params/**/*
-"C:x/protocolpool":
-  - x/protocolpool/**/*
-"C:x/staking":
-  - x/staking/**/*
-"C:x/upgrade":
-  - x/upgrade/**/*
-"C:x/epochs":
-  - x/epochs/**/*
-"Type: ADR":
-  - docs/architecture/**/*
-"Type: Build":
-  - Makefile
-  - Dockerfile
-  - docker-compose.yml
-  - scripts/*
-"Type: CI":
-  - .github/**
-  - buf.yaml
-  - .mergify.yml
-  - .golangci.yml
+labelMapping:
+  bug: 
+    - '^bug'
+    - 'fix'
+  enhancement:
+    - '^feat'
+    - 'enhancement'
+  documentation:
+    - '^docs'
+    - 'doc'
+  needs-review:
+    - '^WIP'

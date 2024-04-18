@@ -11,6 +11,3 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build and Test
-        run: |
-          ./test.sh

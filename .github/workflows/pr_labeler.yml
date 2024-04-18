@@ -1,6 +1,9 @@
 name: "Pull Request Labeler"
 on:
-  - pull_request_target
+  pull_request:
+    types:
+      - opened
+      - edited
 
 permissions:
   contents: read
@@ -12,6 +15,8 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
       - uses: actions/labeler@v4
         with:
           configuration-path: .github/pr_labeler.yml
