@@ -19,16 +19,3 @@ jobs:
           else
             echo "::set-output name=is_valid::true"
           fi
-
-      - name: Add Label
-        if: steps.lint.outputs.is_valid == 'false'
-        uses: actions/github-script@v4
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"  
-          script: |
-            await github.issues.addLabels({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              labels: ['needs-review']
-            })
