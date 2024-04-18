@@ -1,17 +1,34 @@
-name: Pull Request Title Lint
+name: Pull Request Lint and Label
 
 on:
   - pull_request
 
 jobs:
-  lint_title:
+  lint_and_label:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: PR Title Lint
-        uses: morrisoncole/pr-lint-action@v1.7.1
+      - name: Check PR Title
+        id: lint
+        run: |
+          PR_TITLE=$(jq -r '.pull_request.title' $GITHUB_EVENT_PATH)
+          if [[ ! "$PR_TITLE" =~ ^[A-Z].*\.$ ]]; then
+            echo "::set-output name=is_valid::false"
+          else
+            echo "::set-output name=is_valid::true"
+          fi
+
+      - name: Add Label
+        if: steps.lint.outputs.is_valid == 'false'
+        uses: actions/github-script@v4
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"  
-          title-regex: .github/pr-lint-config.yml
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['needs-review']
+            })
