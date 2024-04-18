@@ -1,2 +1,2 @@
-"C:CLI":
-  - client/**/*
+documentation:
+- '**/*.md' # I also tried with /**/*.md but does not work either
