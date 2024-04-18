@@ -1,8 +1,7 @@
 name: Pull Request Size Check
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
 
 jobs:
   size_check:
