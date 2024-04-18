@@ -1,2 +1,2 @@
-newdocs:
+newone:
 - '**/*.md' # I also tried with /**/*.md but does not work either
