@@ -2,19 +2,17 @@ name: PR Labeler
 
 on:
   pull_request:
-    types:
-      - opened
-      - edited
+    types: [opened, edited]
 
 jobs:
   labeler:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v2
       - name: PR Labeler
-        uses: actions/labeler@v5
+        if: github.event_name == 'pull_request'
+        uses: actions/labeler@v4
         with:
-          repo-token: ${{secrets.SSH_PRIVATEKEY}}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           configuration-path: .github/labeler.yml
