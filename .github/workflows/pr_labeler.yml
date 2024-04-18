@@ -1,23 +1,20 @@
-name: "Pull Request Labeler"
+name: PR Labeler
+
 on:
   pull_request:
     types:
       - opened
       - edited
 
-permissions:
-  contents: read
-
 jobs:
   labeler:
-    permissions:
-      contents: read
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
-      - uses: actions/labeler@v4
+        uses: actions/checkout@v4
+
+      - name: PR Labeler
+        uses: actions/labeler@v5
         with:
-          configuration-path: .github/pr_labeler.yml
-          repo-token: "${{ secrets.SSH_PRIVATEKEY }}"
+          repo-token: ${{secrets.SSH_PRIVATEKEY}}
+          configuration-path: .github/labeler.yml
