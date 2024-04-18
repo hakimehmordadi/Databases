@@ -45,6 +45,6 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     needs: label
-    if: ${{ contains(needs.label.outputs.label, 'S') }}
+    if: ${{ contains(needs.label.outputs.label, 'XXL') }}
     steps:
       - run: echo "Too big PR"
