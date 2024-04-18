@@ -1,2 +1,2 @@
-documentation:
+newdocs:
 - '**/*.md' # I also tried with /**/*.md but does not work either
