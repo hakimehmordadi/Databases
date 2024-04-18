@@ -1,5 +1,5 @@
 "C:CLI":
-  - client/**/*
+  - docs/**/*
   - x/*/client/**/*
 "C:Confix":
   - tools/confix/**/*
