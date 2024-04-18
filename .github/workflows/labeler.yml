@@ -1,6 +1,6 @@
 name: "Labeler"
 on:
-- pull_request_target # also tried - pull_request with types [opened]
+  - pull_request
 
 jobs:
   pr-labeler:
