@@ -1,25 +1,5 @@
 build:
 - .github/**/*
 
-design-system:
-- src/design/**/*
-- src/styles/**/*
-
-astro-component:
-- src/**/*.astro
-
-vue-component:
-- src/**/*.vue
-
-images:
-- public/**/*.{ico,svg,jpg,jpeg,png,gif}
-
-pages:
-- src/pages/**/*
-
 typescript:
 - src/**/*.ts
-- src/**/*.tsx
-
-typescript-domain:
-- src/types/**/*
