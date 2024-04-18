@@ -1,5 +1,2 @@
 build:
 - .github/**/*
-
-# typescript:
-# - src/**/*.ts
