@@ -1,8 +1,6 @@
 name: "Labeler"
-
 on:
-  push:
-
+  - pull_request
 
 jobs:
     pr-labeler:

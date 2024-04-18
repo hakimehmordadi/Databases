@@ -1,7 +1,7 @@
 name: Pull Request Lint and Label
 
 on:
-  push:
+  - pull_request
 
 jobs:
   lint_and_label:
