@@ -24,7 +24,7 @@ jobs:
         if: steps.lint.outputs.is_valid == 'false'
         uses: actions/github-script@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: "${{ secrets.GITHUB_TOKEN }}"  
           script: |
             await github.issues.addLabels({
               owner: context.repo.owner,
