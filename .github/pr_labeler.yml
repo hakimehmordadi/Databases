@@ -1,12 +1,3 @@
-labelMapping:
-  bug: 
-    - '^bug'
-    - 'fix'
-  enhancement:
-    - '^feat'
-    - 'enhancement'
-  documentation:
-    - '^docs'
-    - 'doc'
-  needs-review:
-    - '^WIP'
+feature: ['feature/*', 'feat/*']
+fix: fix/*
+bug: bug/*
