@@ -1,0 +1,4 @@
+title:
+  min_length: 10
+  max_length: 100
+  regex: '^[A-Z][a-zA-Z0-9\s]*\.$'
