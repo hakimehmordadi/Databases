@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        
       - name: PR Labeler
-        if: github.event_name == 'pull_request'
         uses: actions/labeler@v4
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.SSH_PRIVATEKEY }}
           configuration-path: .github/pr_labeler.yml
