@@ -13,5 +13,5 @@ jobs:
       - name: PR Title Lint
         uses: morrisoncole/pr-lint-action@v1.7.1
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"  
           title-regex: .github/pr-lint-config.yml
