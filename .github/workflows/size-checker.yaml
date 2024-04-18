@@ -1,0 +1,20 @@
+name: Pull Request Size Check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  size_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Check PR Size
+        run: |
+          SIZE=$(git diff --stat HEAD^..HEAD --shortstat | tr -d ' \n')
+          if [ $SIZE -gt 100 ]; then
+            echo "Pull request size exceeds the limit (500 lines)."
+            exit 1
+          fi
