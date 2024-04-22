@@ -3,7 +3,8 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: hourly
+      interval: daily
+      time: "17:45"
 
   - package-ecosystem: npm
     directory: /
