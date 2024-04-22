@@ -4,10 +4,10 @@ updates:
     directory: /
     schedule:
       interval: daily
-      time: "17:45"
+      time: "12:45"
 
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: daily
-      time: "17:45"
+      time: "12:45"
