@@ -9,4 +9,5 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: hourly
+      interval: daily
+      time: "17:45"
