@@ -9,6 +9,14 @@
   },
   "author": "",
   "license": "ISC",
+  "module": "commonjs",
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ]
+  },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "codecov": "^3.8.3",
