@@ -4,8 +4,14 @@
   "description": "<div align=\"center\">\r   <a>\r     <p align=\"center\"><img alt=\"list\" src=\"assets/1.png\" /></p>\r   </a>\r   <h1><a>Queries</a> - SQL</h1>\r </div>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "codecov": "^3.8.3",
+    "jest": "^29.7.0"
+  }
 }

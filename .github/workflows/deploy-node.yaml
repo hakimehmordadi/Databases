@@ -10,12 +10,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+
+      - name: Run tests with coverage
+        run: npm run coverage
+        
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v2
         with:
-          flags: smart-tests
-          verbose: true
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-          slug: hakimehmordadi/Databases
+          token: ${{ secrets.CODECOV_TOKEN }}
 
