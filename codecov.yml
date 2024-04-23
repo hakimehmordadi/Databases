@@ -1,8 +1,12 @@
-coverage:
-  status:
-    project:
-      default:
-        target: auto
-        # adjust accordingly based on how flaky your tests are
-        # this allows a 10% drop from the previous base commit coverage
-        threshold: 10%
+codecov:
+  token: "3aa756ad-1a1b-492c-8916-326c8c454ade"
+  bot: "codecov-io"
+  ci:
+    - "travis.org"
+  strict_yaml_branch: "yaml-config"
+  max_report_age: 24
+  disable_default_path_fixes: no
+  require_ci_to_pass: yes
+  notify:
+    after_n_builds: 2
+    wait_for_ci: yes
