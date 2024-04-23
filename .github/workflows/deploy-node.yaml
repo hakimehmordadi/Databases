@@ -14,10 +14,28 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests with coverage
-        run: npm run coverage
+
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+
+      # - name: Run ATS
+      #   uses: codecov/codecov-ats@v0
+      #   with:
+      #     static_token: ${{ secrets.CODECOV_STATIC_TOKEN }}
+      #     token:   ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Run tests with coverage
+        run: npm run coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4-beta
+        with:
+          flags: smart-tests
+          verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  
