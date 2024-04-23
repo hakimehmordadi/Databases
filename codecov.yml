@@ -1,18 +1,13 @@
-coverage:
-  status:
-    project:
-      default:
-        # basic
-        target: auto #default
-        threshold: 5
-        base: auto 
-        flags: 
-          - unit
-        paths: 
-          - "src"
-       # advanced settings
-        branches: 
-          - test1
-        if_ci_failed: error #success, failure, error, ignore
-        informational: false
-        only_pulls: false
+flag_management:
+  individual_flags:
+    - name: smart-tests
+      carryforward: true
+      carryforward_mode: "labels"
+      statuses:
+        - type: "project"
+        - type: "patch"
+
+cli:
+  plugins:
+    pycoverage:
+      report_type: "json"
