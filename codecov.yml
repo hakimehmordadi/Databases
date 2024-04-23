@@ -1,12 +1,20 @@
-codecov:
-  token: "3aa756ad-1a1b-492c-8916-326c8c454ade"
-  bot: "codecov-io"
-  ci:
-    - "travis.org"
-  strict_yaml_branch: "yaml-config"
-  max_report_age: 24
-  disable_default_path_fixes: no
-  require_ci_to_pass: yes
-  notify:
-    after_n_builds: 2
-    wait_for_ci: yes
+coverage:
+  status:
+    project:
+      default:
+        # basic
+        target: auto #default
+        threshold: 5
+        base: auto 
+        flags: 
+          - unit
+        paths: 
+          - "src"
+       # advanced settings
+        branches: 
+          - test2
+          - main
+          - test1
+        if_ci_failed: error #success, failure, error, ignore
+        informational: false
+        only_pulls: false
