@@ -17,4 +17,5 @@ jobs:
           verbose: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          slug: hakimehmordadi/Databases
 
