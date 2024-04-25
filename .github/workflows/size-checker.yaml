@@ -2,7 +2,7 @@ name: Pull Request Size Check
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, edited, synchronize, reopened]
 
 jobs:
   size_check:
@@ -13,8 +13,10 @@ jobs:
 
       - name: Check PR Size
         run: |
-          SIZE=$(git diff --stat HEAD^..HEAD --shortstat | tr -d ' \n')
-          if [ $SIZE -gt 100 ]; then
-            echo "Pull request size exceeds the limit (500 lines)."
+          SIZE=$(git diff --stat HEAD~1..HEAD --shortstat | tr -d ' \n')
+          if [ -z "$SIZE" ]; then
+            echo "No changes in the pull request."
+          elif [ "$SIZE" -gt 100 ]; then
+            echo "Pull request size exceeds the limit (100 lines)."
             exit 1
           fi
