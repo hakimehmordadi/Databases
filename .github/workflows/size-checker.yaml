@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: budougumi0617/action-pr-size-checker@v0
         with:
-          github_token: ${{ secrets.github_token }}
-          max_added_count: 50
-          # filter_pattern: "go.mod|go.sum|.*_test.go|.*.md|.*.golden|.*.yml"
+          # github_token: ${{ secrets.GITHUB_TOKEN }}
+          max_added_count: 100
+          filter_pattern: "go.mod|go.sum|.*_test.go|.*.md|.*.golden|.*.yml"
