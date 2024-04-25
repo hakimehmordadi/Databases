@@ -14,7 +14,8 @@ jobs:
         id: lint
         run: |
           PR_TITLE=$(jq -r '.pull_request.title' $GITHUB_EVENT_PATH)
-          if [[ ! "$PR_TITLE" =~ ^[A-Z].*\.$ ]]; then
+          echo "$PR_TITLE"
+          if [[ "$PR_TITLE" =~ ^[A-Z].*\.$ ]]; then
             echo "::set-output name=is_valid::false"
           else
             echo "::set-output name=is_valid::true"
