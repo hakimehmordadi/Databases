@@ -7,16 +7,10 @@ jobs:
   lint_and_label:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Check PR Title
-        id: lint
-        run: |
-          PR_TITLE=$(jq -r '.pull_request.title' $GITHUB_EVENT_PATH)
-          echo "$PR_TITLE"
-          if [[ "$PR_TITLE" =~ ^[A-Z].* ]]; then
-            echo "::set-output name=is_valid::false"
-          else
-            echo "::set-output name=is_valid::true"
-          fi
+      - uses: deepakputhraya/action-pr-title@master
+        with:
+          regex: '([a-z])+\/([a-z])+' # Regex the title should match.
+          prefix_case_sensitive: false # title prefix are case insensitive
+          min_length: 5 # Min length of the title
+          max_length: 50 # Max length of the title
+          # github_token: ${{ github.token }} # Default: ${{ github.token }}
