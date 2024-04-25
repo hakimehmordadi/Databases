@@ -1,4 +1,4 @@
-name: Pull Request Lint and Label
+name: Pull Request Lint
 
 on:
   - pull_request
