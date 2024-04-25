@@ -1,14 +1,12 @@
-name: PR Size Checker
-on: pull_request
+name: check-pr-size
+on: [pull_request]
 jobs:
-  check_pr_size:
-    name: Check PR size doesn't break set limit
+  linter_name:
+    name: runner / check-pr-size
     runs-on: ubuntu-latest
     steps:
-      # checkout your code with your git history
-      - uses: actions/checkout@v2
+      - uses: budougumi0617/action-pr-size-checker@v0
         with:
-          fetch-depth: 0
-      - uses: maidsafe/pr_size_checker@v2
-        with:
-          max_lines_changed: 200
+          github_token: ${{ secrets.github_token }}
+          max_added_count: 300
+          # filter_pattern: "go.mod|go.sum|.*_test.go|.*.md|.*.golden|.*.yml"
