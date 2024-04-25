@@ -1,4 +1,4 @@
-name: Dependency Review
+name: Running Dependency Review
 
 on:
   pull_request:

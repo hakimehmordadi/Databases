@@ -1,4 +1,4 @@
-name: "Labeler"
+name: "Running Labeler"
 on:
   - pull_request
 

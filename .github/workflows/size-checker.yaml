@@ -1,7 +1,7 @@
-name: check-pr-size
+name: Running PR Size Checker
 on: [pull_request]
 jobs:
-  linter_name:
+  pr_size_checker:
     name: runner / check-pr-size
     runs-on: ubuntu-latest
     steps:

@@ -1,4 +1,4 @@
-name: "Team Lable"
+name: "Running Team Lable"
 
 on:
 - pull_request
@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   team-labeler:
-    name: Validate PR title
+    name: Team Labeler
     runs-on: ubuntu-latest
     steps:
     - uses: JulienKode/team-labeler-action@v1.1.0
