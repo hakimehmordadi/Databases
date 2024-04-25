@@ -1,22 +1,14 @@
-name: Pull Request Size Check
-
-on:
-  pull_request:
-    types: [opened, edited, synchronize, reopened]
-
+name: PR Size Checker
+on: pull_request
 jobs:
-  size_check:
+  check_pr_size:
+    name: Check PR size doesn't break set limit
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Check PR Size
-        run: |
-          SIZE=$(git diff --stat HEAD~1..HEAD --shortstat | tr -d ' \n')
-          if [ -z "$SIZE" ]; then
-            echo "No changes in the pull request."
-          elif [ "$SIZE" -gt 100 ]; then
-            echo "Pull request size exceeds the limit (100 lines)."
-            exit 1
-          fi
+      # checkout your code with your git history
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: maidsafe/pr_size_checker@v2
+        with:
+          max_lines_changed: 200
