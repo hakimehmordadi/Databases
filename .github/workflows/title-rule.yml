@@ -1,4 +1,4 @@
-name: "Running Validate Semantic PR Title"
+name: "Validate Semantic PR Title"
 
 on:
   - pull_request
@@ -7,7 +7,7 @@ permissions:
   pull-requests: read
 
 jobs:
-  semantic_pr_title:
+  main:
     runs-on: ubuntu-latest
     steps:
       - uses: amannn/action-semantic-pull-request@v5

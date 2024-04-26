@@ -1,10 +1,10 @@
-name: Running Validate PR Title
+name: Pull Request Lint
 
 on:
   - pull_request
 
 jobs:
-  lint_title:
+  lint_and_label:
     runs-on: ubuntu-latest
     steps:
       - uses: deepakputhraya/action-pr-title@master
