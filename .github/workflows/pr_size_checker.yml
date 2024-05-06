@@ -1,0 +1,64 @@
+
+name: check-pr-size
+on: [pull_request]
+jobs:
+  linter_name:
+    name: runner / check-pr-size
+    runs-on: ubuntu-latest
+    steps:
+      - uses: budougumi0617/action-pr-size-checker@v0
+        with:
+          max_added_count: 65
+          filter_pattern: '|.*.pb.go|.*.pb.gw.go'
+          #filter_pattern: "go.mod|go.sum|.*_test.go|.*.md|.*.golden|.*.yml|.*.yaml"
+
+
+
+
+
+
+# name: PR Size Checker
+# on:
+#   pull_request:
+#     types: [opened, synchronize]
+
+# jobs:
+#   pr-size-check:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v2
+
+#       - name: Check PR Size
+#         run: |
+#           PR_SIZE=$(git diff --stat origin/test2...HEAD | grep -E "(\.js$|\.jsx$|\.ts$|\.tsx$|\.css$|\.html$|\.json$|\.yml$|\.yaml$)" | awk '{sum += $3} END {print sum}')
+#           if [ $PR_SIZE -gt 400 ]; then
+#             echo "::error::PR size exceeds the limit of 400 bytes"
+#             exit 1
+#           fi
+#         shell: bash
+      
+#       - name: Exclude Files from PR Size Check
+#         run: |
+#           git diff --name-only origin/test2...HEAD | grep -E "coverage/clover\.ext$
+#         shell: bash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
