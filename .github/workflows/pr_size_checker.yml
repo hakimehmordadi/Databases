@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: budougumi0617/action-pr-size-checker@v0
         with:
-          max_added_count: 94
-          filter_pattern: './src/types/openai.yml'
+          max_added_count: 90
+          filter_pattern: 'go.mod|go.sum|.*.yml'
           #filter_pattern: "go.mod|go.sum|.*_test.go|.*.md|.*.golden|.*.yml|.*.yaml"
 
 
