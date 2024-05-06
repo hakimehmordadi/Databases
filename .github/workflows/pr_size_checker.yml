@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: budougumi0617/action-pr-size-checker@v0
         with:
-          max_added_count: 200
+          max_added_count: 84
           filter_pattern: '|.*.yml|.*.pb.go|.*.pb.gw.go'
           #filter_pattern: "go.mod|go.sum|.*_test.go|.*.md|.*.golden|.*.yml|.*.yaml"
 
