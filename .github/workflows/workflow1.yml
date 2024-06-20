@@ -1,0 +1,17 @@
+# .github/workflows/workflow1.yml
+name: Workflow 1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run first set of tasks
+        run: echo "Running Workflow 1 tasks"
